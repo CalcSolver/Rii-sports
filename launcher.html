@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rii‑Sports Launcher</title>
+<style>
+  body {
+    margin: 0;
+    background: #0b0b0b;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .menu {
+    text-align: center;
+  }
+  h1 {
+    font-size: 42px;
+    margin-bottom: 20px;
+  }
+  button {
+    display: block;
+    width: 260px;
+    padding: 14px;
+    margin: 10px auto;
+    font-size: 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: #1e90ff;
+    color: white;
+  }
+  button:hover {
+    background: #3aa0ff;
+  }
+</style>
+</head>
+<body>
+
+<div class="menu">
+  <h1>Rii‑Sports</h1>
+  <button onclick="start('bowling')">Bowling</button>
+  <button onclick="start('tennis')">Tennis</button>
+  <button onclick="start('baseball')">Baseball</button>
+  <button onclick="start('boxing')">Boxing</button>
+  <button onclick="start('golf')">Golf</button>
+</div>
+
+<script>
+function start(sport) {
+  window.location.href = "index.html?sport=" + sport;
+}
+</script>
+
+</body>
+</html>
