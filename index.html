@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Rii-Sports</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #000;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+  }
+  #gameCanvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    background: #000;
+  }
+  #loading {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 24px;
+    background: #000;
+  }
+</style>
+</head>
+<body>
+
+<div id="loading">Loading Rii‑Sports…</div>
+<canvas id="gameCanvas"></canvas>
+
+<script type="module">
+  import init from "./src/main.js";
+
+  const canvas = document.getElementById("gameCanvas");
+
+  async function start() {
+    try {
+      await init(canvas);
+      document.getElementById("loading").style.display = "none";
+    } catch (err) {
+      console.error("Rii‑Sports failed to load:", err);
+      document.getElementById("loading").textContent = "Failed to load Rii‑Sports.";
+    }
+  }
+
+  start();
+</script>
+
+</body>
+</html>
